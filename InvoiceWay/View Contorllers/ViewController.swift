@@ -9,9 +9,10 @@
 import UIKit
 import FirebaseDatabase
 import GoogleMobileAds
+import FirebaseAuth
 
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, GADBannerViewDelegate{
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  UITextFieldDelegate, GADBannerViewDelegate{
 
     
     var hasStarted = false
@@ -27,7 +28,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var menuView: UIView!
     @IBOutlet weak var clearCurrentOrder: UIButton!
     var pickerData: [String] = [String]()
-    var selection = "";
     var cart = [String]();
     var priceCart = [Int]();
     @IBOutlet weak var totalLabel: UILabel!
@@ -41,29 +41,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBAction func addtoBill(_ sender: UIButton) {
-        custNameTextField.isEnabled = false
-        if (selection == "") || (selection == "Select a catagory") {
-            let alert = UIAlertController(title: "Please select a catagory", message: "Make sure you select eihter Beauty, Home, nutrition, or Personal. If this is an error, please contact starboatllc@gmail.com with screenshots and an explanation of what happened.", preferredStyle: .alert)
+        let defaults = UserDefaults.standard
+        let token = defaults.string(forKey: "iboNum")
+        
+        
+        if (token == ""){
+            let alert = UIAlertController(title: "Error", message: "Please login or create an account first", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             
 
             self.present(alert, animated: true)
-        } else if (SKUInput.text!.isEmpty) {
+        }else if (SKUInput.text!.isEmpty) {
             let alert = UIAlertController(title: "No SKU entered", message: "You did not enter a SKU. If this is an error, please contact starboatllc@gmail.com with screenshots and an explanation of what happened.", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             
 
             self.present(alert, animated: true)
-//        } else if (SKUInput.text! == "") {
-//            let alert = UIAlertController(title: "No SKU found", message: "Make sure you enter a SKU from an Amway Product. If this is an error, please contact starboatllc@gmail.com to have us add the item in our database.", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-//
-//
-//            self.present(alert, animated: true)
-//        }
+        } else if (custNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines) == "") {
+            let alert = UIAlertController(title: "No name entered", message: "Make sure you enter a name for your customer. If this is an error, please contact starboatllc@gmail.com with screenshots.", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
+
+
+            self.present(alert, animated: true)
         } else if (SKUInput.text!.contains("-") || SKUInput.text!.contains(" ") || SKUInput.text!.contains("_")) {
             let alert = UIAlertController(title: "Invalid characters", message: "Make sure you enter a SKU WITHOUT dashes, underscores, or spaces. If this is an error, please contact starboatllc@gmail.com to have us add the item in our database.", preferredStyle: .alert)
 
@@ -72,13 +74,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             self.present(alert, animated: true)
         } else {
-            
+   
+            custNameTextField.isEnabled = false
+
         
-        
-        ref.child("amway_products").child(selection).child(SKUInput.text!).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("amway_products").child(SKUInput.text!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
 
             if (value == nil) {
+                print(self.SKUInput.text!)
                 let alert = UIAlertController(title: "No SKU found", message: "Make sure you enter a SKU from an Amway Product. If this is an error, please contact starboatllc@gmail.com to have us add the item in our database.", preferredStyle: .alert)
               
                         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
@@ -87,10 +91,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                          self.present(alert, animated: true)
             } else {
                 
-            
+                print(self.SKUInput.text!)
+
             
             var itemName = value?["itemName"] ?? "No item found"
                 var price = value?["price"] ?? 0.00
+                var catagory = value?["catagory"] ?? "No catagory found"
             
             
             if let price2 = Int(price as! String) {
@@ -108,7 +114,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             
             var SKU = value?["SKU"] ?? "000000"
-            var combindedStrings = "$\(price) - (\(itemName)) - \(SKU)"
+            var combindedStrings = "$\(price) - (\(itemName)) - \(SKU): \(catagory)"
             self.cart.append(combindedStrings)
             self.billView.reloadData()
             self.SKUInput.text = ""
@@ -138,18 +144,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }else {
             
        
-        
+         
         
         let defaults = UserDefaults.standard
         let token = defaults.string(forKey: "iboNum")
-        if (token == ""){
-            let alert = UIAlertController(title: "Error", message: "Please login first", preferredStyle: .alert)
-
-            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
-            
-
-            self.present(alert, animated: true)
-        }else {
+       
             var i = 0
            
             
@@ -157,7 +156,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
             for item in cart {
                 
-                ref.child("users/\(String(describing: token!))/customers/\(custNameTextField.text!)/orders/cart on \(today!)/\(i)").setValue(item)
+                ref.child("users/\(String(describing: token!))/customers/\(custNameTextField.text!.uppercased())/orders/cart on \(today!)/\(i)").setValue(item)
 
                 i+=1
             }
@@ -166,22 +165,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             let vc = storyboard!.instantiateViewController(withIdentifier: "checkout") as! checkoutController
             let nc = UINavigationController(rootViewController: vc)
-            vc.name = custNameTextField.text!
+            vc.name = custNameTextField.text!.uppercased()
                 vc.cart = self.cart
             vc.price = self.finalprice
-            self.present(nc, animated: true, completion: nil)
+            self.present(nc, animated: true) {
+                self.SKUInput.text! = ""
+                self.cart.removeAll()
+                self.priceCart.removeAll()
+                self.billView.reloadData()
+                self.totalLabel.text! = "Total: $0.00"
+                self.custNameTextField.isEnabled = true
+                self.custNameTextField.text! = ""
+
+            }
            
             
-            SKUInput.text! = ""
-            cart.removeAll()
-            priceCart.removeAll()
-            self.billView.reloadData()
-            totalLabel.text! = "Total: $0.00"
-            custNameTextField.isEnabled = true
-            custNameTextField.text! = ""
-            picker.selectRow(0, inComponent: 0, animated: true)
+        
 
-        }
+        
         }
     }
 
@@ -192,20 +193,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         banner = GADBannerView(adSize: kGADAdSizeBanner)
 
         addBannerViewToView(banner)
-   banner.adUnitID = "ca-app-pub-1934606145749562/1593655919"
+   banner.adUnitID = "ca-app-pub-9400593844053407/9414830831"
    banner.rootViewController = self
         banner.load(GADRequest())
 //        bannerView.delegate = self
         //addBannerViewToView(bannerView)
-
-//            SKUInput.text! = ""
-//        cart.removeAll()
-//        priceCart.removeAll()
-//        self.billView.reloadData()
-//        totalLabel.text! = "Total: $0.00"
-//        picker.selectRow(0, inComponent: 0, animated: true)
-           
-            
+        
+     
         
         
         self.custNameTextField.delegate = self
@@ -213,10 +207,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         billView.dataSource = self
         billView.delegate = self
-        self.picker.delegate = self
-          self.picker.dataSource = self
+        
+        
+        //SKUInput.text! = ""
+        cart.removeAll()
+        priceCart.removeAll()
         self.billView.reloadData()
-
+        //totalLabel.text! = "Total: $0.00"
 
         var centerNavigationController: UINavigationController!
         var centerViewController: ViewController!
@@ -227,21 +224,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
        
         
       
-    pickerData = ["Select a catagory","Beauty", "Home", "Nutrition", "Personal Care"]
 
     }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-        
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
+
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -261,10 +246,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return cell
     }
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        selection = pickerData[row] as String
-    }
+
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -284,7 +266,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var menuHidden = false
 
     @IBAction func showMenu(_ sender: UIBarButtonItem) {
-
+        let defaults = UserDefaults.standard
+        let token = defaults.string(forKey: "iboNum")
+        print(token)
+        
         if (menuHidden == false) {
             //menuButtonText.setTitle("HIDE MENU", for: .normal)
             
@@ -311,19 +296,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
  
     
-    @IBAction func clearOrder(_ sender: UIButton) {
+    @IBAction func clearOrder(_ sender: UIBarItem) {
         
-        UIView.animate(withDuration: 0.5) {
-            
-            self.menuView.frame.origin.x = -195
-            
-        }
+        
         SKUInput.text! = ""
         cart.removeAll()
         priceCart.removeAll()
         self.billView.reloadData()
         totalLabel.text! = "Total: $0.00"
-        picker.selectRow(0, inComponent: 0, animated: true)
     
         
 
@@ -374,7 +354,7 @@ func getTodayString() -> String{
 
             }
     
-    @IBAction func viewPastOrdersClicked(_ sender: UIButton) {
+    @IBAction func viewPastOrdersClicked(_ sender: UIBarItem) {
         let defaults = UserDefaults.standard
         let token = defaults.string(forKey: "iboNum")
         
@@ -395,31 +375,68 @@ func getTodayString() -> String{
     }
     
     @IBAction func loginClicked(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        let token = defaults.string(forKey: "iboNum")
+       
         
-        if (token == ""){
+        print(Auth.auth().currentUser?.uid)
+        showMiracle()
+    }
+        
+          
+        
+        
+        
+        
+    
+
+      
+    
+
+    @IBAction func logout_clickec(_ sender: UIButton) {
+        
+        do {
+            try Auth.auth().signOut()
+            let defaults = UserDefaults.standard
+            defaults.set("", forKey: "iboNum")
+            defaults.set("", forKey: "name")
+            defaults.set("", forKey: "email")
+            let alert = UIAlertController(title: "Sucess", message: "Logout sucesfull. Please login to create an order.", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             
-            let vc = storyboard!.instantiateViewController(withIdentifier: "login") as! login
-            let nc = UINavigationController(rootViewController: vc)
-            self.present(nc, animated: true, completion: nil)
-        }else{
-        
-            let alert = UIAlertController(title: "Error", message: "You are already logged in", preferredStyle: .alert)
+
+            self.present(alert, animated: true) {
+                UIView.animate(withDuration: 0.5) {
+                    
+                    self.menuView.frame.origin.x = -195
+                    
+                }
+                self.SKUInput.text! = ""
+                self.cart.removeAll()
+                self.priceCart.removeAll()
+                self.billView.reloadData()
+                self.totalLabel.text! = "Total: $0.00"
+                self.picker.selectRow(0, inComponent: 0, animated: true)
+                self.custNameTextField.text! = ""
+                
+            }
+
+        } catch let signOutError as NSError {
+            let alert = UIAlertController(title: "Error", message: "Error logging out. Please try again. Error: \(signOutError)", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
             
 
             self.present(alert, animated: true)
-    }
+        }
         
+        
+        
+    }
+    
     
     //start ad code
     
     // In this case, we instantiate the banner with desired ad size.
-      
-    }
-
     func addBannerViewToView(_ bannerView: GADBannerView) {
       bannerView.translatesAutoresizingMaskIntoConstraints = false
       view.addSubview(bannerView)
@@ -442,9 +459,27 @@ func getTodayString() -> String{
      }
      
     
+
     
+    @IBAction func onButton(_ sender: Any) {
+        showMiracle()
+    }
+    
+    @objc func showMiracle() {
+        let slideVC = OverlayView()
+            slideVC.modalPresentationStyle = .custom
+        slideVC.transitioningDelegate = self
+        self.present(slideVC, animated: true, completion: nil)
+    }
     
 }
+
+extension ViewController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        PresentationController(presentedViewController: presented, presenting: presenting)
+    }
+}
     
+
     
 

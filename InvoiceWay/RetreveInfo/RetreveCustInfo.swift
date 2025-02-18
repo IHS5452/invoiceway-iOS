@@ -24,17 +24,22 @@ class RetreveCustInfo: UIViewController,UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var purchased: UITableView!
     var ref = Database.database().reference()
 
+
     
-    @IBAction func verifyPINClicked(_ sender: UIButton) {
+    
+    @IBAction func showWebInfo(_ sender: UIButton) {
         
-        let vc = storyboard!.instantiateViewController(withIdentifier: "verifyID") as! verifyPIN
-        let nc = UINavigationController(rootViewController: vc)
-        vc.name = self.name
-            
-        self.present(nc, animated: true, completion: nil)
-        
+        let vc = storyboard!.instantiateViewController(withIdentifier: "WebInfo") as! retreveWebInfo
+                   let nc = UINavigationController(rootViewController: vc)
+        vc.name = custName.text!
+
+                   self.present(nc, animated: true, completion: nil)
+                
         
     }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +53,7 @@ class RetreveCustInfo: UIViewController,UITableViewDataSource, UITableViewDelega
         let defaults = UserDefaults.standard
         let token = defaults.string(forKey: "iboNum")
 
-        ref.child("users").child(token!).child("customers").child(name).child("orders").child(purchaseDate).observeSingleEvent(of: .value, with: { snapshot in
+        ref.child("users").child(token!).child("customers").child(name.uppercased()).child("orders").child(purchaseDate).observeSingleEvent(of: .value, with: { snapshot in
             for child in snapshot.children {
 //                    let snap = child as! DataSnapshot
 //                    let song = snap.key
@@ -60,12 +65,12 @@ class RetreveCustInfo: UIViewController,UITableViewDataSource, UITableViewDelega
             print(self.purchased)
 
         })
-        
+        print(name)
         ref.child("users").child(token!).child("customers").child(name).observeSingleEvent(of: .value, with: { [self] snapshot in
             for child in snapshot.children {
                 let value = snapshot.value as? NSDictionary
 
-                var email = value?["email"] ?? "test@gmail.com"
+                var email = value?["email"] ?? "NO EMAIL ON FILE"
                 var address = value?["address"] ?? "NO ADDRESS ON FILE"
                 var name = value?["fullName"] ?? "NULL"
 

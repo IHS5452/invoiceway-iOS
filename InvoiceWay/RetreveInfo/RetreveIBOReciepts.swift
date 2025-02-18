@@ -20,12 +20,11 @@ class RetreveIBOReciepts: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     
-    
     @IBAction func searchClicked(_ sender: UIButton) {
         let ref = Database.database().reference()
 
         if (custName.text!.isEmpty) {
-            let alert = UIAlertController(title: "No name entered", message: "You did not enter the a name. If this is an error, please contact starboatllc@gmail.com with screenshots and an explanation of what happened.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "No name entered", message: "You did not enter a name. If this is an error, please contact starboatllc@gmail.com with screenshots and an explanation of what happened.", preferredStyle: .alert)
 
             alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
 
@@ -37,7 +36,7 @@ class RetreveIBOReciepts: UIViewController, UITableViewDataSource, UITableViewDe
         let defaults = UserDefaults.standard
         let token = defaults.string(forKey: "iboNum")
 
-            ref.child("users").child(token!).child("customers").child(custName.text!).child("orders").observeSingleEvent(of: .value, with: { snapshot in
+            ref.child("users").child(token!).child("customers").child(custName.text!.uppercased()).child("orders").observeSingleEvent(of: .value, with: { snapshot in
                 for child in snapshot.children {
 //                    let snap = child as! DataSnapshot
 //                    let song = snap.key

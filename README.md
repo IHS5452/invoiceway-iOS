@@ -1,3 +1,2 @@
-# invoiceway-iOS-v1_deprecated
-an iOS App I created for Amway IBOs to track and digitalize orders from parties they host, events they sell at, and much more!
-The verison number of this upload is version 1.0. There is a new verison, 2.0, on the iOS App Store currently.
+<p>Please note, I do not believe that MLMs/Pyramid schemes are ethical or good businesses in any way. This app is meant to be STRICTLY for my portfolio to show off my skills.</p>
+<h1>InvoiceWay is an Application for my portfolio that is meant for Amway IBOs to keep track of their sales at their home parties.</h1>

@@ -3,19 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3500B9D725FDBC1800C62199 /* CompleteOrderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3500B9D425FDBC1800C62199 /* CompleteOrderView.xib */; };
+		351B751925FDC21D008801C3 /* COView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 351B751825FDC21D008801C3 /* COView.swift */; };
 		352A387E24AD490E00B38CB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A387D24AD490E00B38CB0 /* AppDelegate.swift */; };
 		352A388024AD490E00B38CB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A387F24AD490E00B38CB0 /* SceneDelegate.swift */; };
-		352A388224AD490E00B38CB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A388124AD490E00B38CB0 /* ViewController.swift */; };
 		352A388524AD490E00B38CB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A388324AD490E00B38CB0 /* Main.storyboard */; };
 		352A388824AD490E00B38CB0 /* InvoiceWay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 352A388624AD490E00B38CB0 /* InvoiceWay.xcdatamodeld */; };
 		352A388A24AD491600B38CB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 352A388924AD491600B38CB0 /* Assets.xcassets */; };
 		352A388D24AD491600B38CB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 352A388B24AD491600B38CB0 /* LaunchScreen.storyboard */; };
 		352A389824AD491600B38CB0 /* InvoiceWayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A389724AD491600B38CB0 /* InvoiceWayTests.swift */; };
 		352A38A324AD491700B38CB0 /* InvoiceWayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38A224AD491700B38CB0 /* InvoiceWayUITests.swift */; };
+		352A38B524AD4AB000B38CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 352A38B024AD4AAF00B38CB0 /* GoogleService-Info.plist */; };
+		352A38C124AD4AC800B38CB0 /* checkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38BB24AD4AC600B38CB0 /* checkoutController.swift */; };
+		352A38C224AD4AC800B38CB0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38BC24AD4AC700B38CB0 /* ViewController.swift */; };
+		352A38C324AD4AC800B38CB0 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38BD24AD4AC700B38CB0 /* NavigationViewController.swift */; };
+		352A38C424AD4AC800B38CB0 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38BE24AD4AC700B38CB0 /* Register.swift */; };
+		352A38C524AD4AC800B38CB0 /* shippingInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38BF24AD4AC800B38CB0 /* shippingInfoController.swift */; };
+		352A38C624AD4AC800B38CB0 /* login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38C024AD4AC800B38CB0 /* login.swift */; };
+		352A38CC24AD4AEE00B38CB0 /* RetreveIBOReciepts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38C824AD4AEE00B38CB0 /* RetreveIBOReciepts.swift */; };
+		352A38CE24AD4AEE00B38CB0 /* RetreveCustInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352A38CA24AD4AEE00B38CB0 /* RetreveCustInfo.swift */; };
+		35A042EF25C380B600EE1456 /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35A042EE25C380B600EE1456 /* OverlayView.xib */; };
+		35A042F425C380FD00EE1456 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A042F325C380FD00EE1456 /* OverlayView.swift */; };
+		35BF535625FDC63200DDBCE9 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF535525FDC63200DDBCE9 /* PresentationController.swift */; };
+		35BF535E25FDCFE600DDBCE9 /* WebisteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF535D25FDCFE600DDBCE9 /* WebisteInfoViewController.swift */; };
+		35BF537925FDD7BF00DDBCE9 /* retreveWebInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BF537825FDD7BF00DDBCE9 /* retreveWebInfo.swift */; };
+		48EF48AE3BE7EC4EE64A5E42 /* Pods_InvoiceWay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEF6998C480936049A52DA17 /* Pods_InvoiceWay.framework */; };
+		8387E161037A682D372FD3CE /* Pods_InvoiceWay_InvoiceWayUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E31317B6430672FB5AB155C5 /* Pods_InvoiceWay_InvoiceWayUITests.framework */; };
+		D81167AE0CD5E10594D83128 /* Pods_InvoiceWayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE5A8009909C19A9FA53BE5 /* Pods_InvoiceWayTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +54,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12C3058FDD6AFA6C3C863431 /* Pods-InvoiceWay-InvoiceWayUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceWay-InvoiceWayUITests.release.xcconfig"; path = "Target Support Files/Pods-InvoiceWay-InvoiceWayUITests/Pods-InvoiceWay-InvoiceWayUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3500B9D425FDBC1800C62199 /* CompleteOrderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteOrderView.xib; sourceTree = "<group>"; };
+		351B751825FDC21D008801C3 /* COView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COView.swift; sourceTree = "<group>"; };
 		352A387A24AD490E00B38CB0 /* InvoiceWay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvoiceWay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		352A387D24AD490E00B38CB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		352A387F24AD490E00B38CB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		352A388124AD490E00B38CB0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		352A388424AD490E00B38CB0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		352A388724AD490E00B38CB0 /* InvoiceWay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InvoiceWay.xcdatamodel; sourceTree = "<group>"; };
 		352A388924AD491600B38CB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +71,28 @@
 		352A389E24AD491700B38CB0 /* InvoiceWayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvoiceWayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		352A38A224AD491700B38CB0 /* InvoiceWayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceWayUITests.swift; sourceTree = "<group>"; };
 		352A38A424AD491700B38CB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		352A38B024AD4AAF00B38CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		352A38BB24AD4AC600B38CB0 /* checkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkoutController.swift; sourceTree = "<group>"; };
+		352A38BC24AD4AC700B38CB0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		352A38BD24AD4AC700B38CB0 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		352A38BE24AD4AC700B38CB0 /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Register.swift; path = "../New Group1/Register.swift"; sourceTree = "<group>"; };
+		352A38BF24AD4AC800B38CB0 /* shippingInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shippingInfoController.swift; sourceTree = "<group>"; };
+		352A38C024AD4AC800B38CB0 /* login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = login.swift; sourceTree = "<group>"; };
+		352A38C824AD4AEE00B38CB0 /* RetreveIBOReciepts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetreveIBOReciepts.swift; sourceTree = "<group>"; };
+		352A38CA24AD4AEE00B38CB0 /* RetreveCustInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetreveCustInfo.swift; sourceTree = "<group>"; };
+		35816CA31CB33FC13CB1A936 /* Pods-InvoiceWayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceWayTests.release.xcconfig"; path = "Target Support Files/Pods-InvoiceWayTests/Pods-InvoiceWayTests.release.xcconfig"; sourceTree = "<group>"; };
+		35A042EE25C380B600EE1456 /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		35A042F325C380FD00EE1456 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
+		35BF535525FDC63200DDBCE9 /* PresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
+		35BF535D25FDCFE600DDBCE9 /* WebisteInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebisteInfoViewController.swift; sourceTree = "<group>"; };
+		35BF537825FDD7BF00DDBCE9 /* retreveWebInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = retreveWebInfo.swift; sourceTree = "<group>"; };
+		5742892AC80FF898D39A44F1 /* Pods-InvoiceWayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceWayTests.debug.xcconfig"; path = "Target Support Files/Pods-InvoiceWayTests/Pods-InvoiceWayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BA24B097E7D0472DDDB5A9FB /* Pods-InvoiceWay-InvoiceWayUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceWay-InvoiceWayUITests.debug.xcconfig"; path = "Target Support Files/Pods-InvoiceWay-InvoiceWayUITests/Pods-InvoiceWay-InvoiceWayUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAE5A8009909C19A9FA53BE5 /* Pods_InvoiceWayTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InvoiceWayTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE87BD22FB5F3AEFAEB27F00 /* Pods-InvoiceWay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceWay.debug.xcconfig"; path = "Target Support Files/Pods-InvoiceWay/Pods-InvoiceWay.debug.xcconfig"; sourceTree = "<group>"; };
+		E31317B6430672FB5AB155C5 /* Pods_InvoiceWay_InvoiceWayUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InvoiceWay_InvoiceWayUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6A326CC030D2DED5A01A69F /* Pods-InvoiceWay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvoiceWay.release.xcconfig"; path = "Target Support Files/Pods-InvoiceWay/Pods-InvoiceWay.release.xcconfig"; sourceTree = "<group>"; };
+		EEF6998C480936049A52DA17 /* Pods_InvoiceWay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InvoiceWay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				48EF48AE3BE7EC4EE64A5E42 /* Pods_InvoiceWay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81167AE0CD5E10594D83128 /* Pods_InvoiceWayTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +116,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8387E161037A682D372FD3CE /* Pods_InvoiceWay_InvoiceWayUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		161798BCE59262D121CADA8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE87BD22FB5F3AEFAEB27F00 /* Pods-InvoiceWay.debug.xcconfig */,
+				E6A326CC030D2DED5A01A69F /* Pods-InvoiceWay.release.xcconfig */,
+				BA24B097E7D0472DDDB5A9FB /* Pods-InvoiceWay-InvoiceWayUITests.debug.xcconfig */,
+				12C3058FDD6AFA6C3C863431 /* Pods-InvoiceWay-InvoiceWayUITests.release.xcconfig */,
+				5742892AC80FF898D39A44F1 /* Pods-InvoiceWayTests.debug.xcconfig */,
+				35816CA31CB33FC13CB1A936 /* Pods-InvoiceWayTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3500B9D125FDBBE200C62199 /* Add Customer Infomration */ = {
+			isa = PBXGroup;
+			children = (
+				351B751825FDC21D008801C3 /* COView.swift */,
+				3500B9D425FDBC1800C62199 /* CompleteOrderView.xib */,
+			);
+			path = "Add Customer Infomration";
+			sourceTree = "<group>";
+		};
+		350F871625B9DD160071FB5A /* Login and Register VC */ = {
+			isa = PBXGroup;
+			children = (
+				352A38BE24AD4AC700B38CB0 /* Register.swift */,
+			);
+			path = "Login and Register VC";
+			sourceTree = "<group>";
+		};
+		350F871725B9DD6B0071FB5A /* Save Info View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				352A38BB24AD4AC600B38CB0 /* checkoutController.swift */,
+				352A38BF24AD4AC800B38CB0 /* shippingInfoController.swift */,
+				35BF535D25FDCFE600DDBCE9 /* WebisteInfoViewController.swift */,
+			);
+			name = "Save Info View Controller";
+			path = "New Group2";
+			sourceTree = "<group>";
+		};
+		35247F6F25B9D9460093592A /* Login View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				352A38C024AD4AC800B38CB0 /* login.swift */,
+			);
+			path = "Login View Controller";
+			sourceTree = "<group>";
+		};
 		352A387124AD490E00B38CB0 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +179,8 @@
 				352A389624AD491600B38CB0 /* InvoiceWayTests */,
 				352A38A124AD491700B38CB0 /* InvoiceWayUITests */,
 				352A387B24AD490E00B38CB0 /* Products */,
+				161798BCE59262D121CADA8E /* Pods */,
+				57AAE7F6A44B697D87C69F44 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,9 +197,16 @@
 		352A387C24AD490E00B38CB0 /* InvoiceWay */ = {
 			isa = PBXGroup;
 			children = (
+				3500B9D125FDBBE200C62199 /* Add Customer Infomration */,
+				35A042F825C3810200EE1456 /* Menu Files */,
+				350F871725B9DD6B0071FB5A /* Save Info View Controller */,
+				350F871625B9DD160071FB5A /* Login and Register VC */,
+				35247F6F25B9D9460093592A /* Login View Controller */,
+				352A38C724AD4AD800B38CB0 /* RetreveInfo */,
+				352A38BA24AD4ABA00B38CB0 /* View Contorllers */,
+				352A38B024AD4AAF00B38CB0 /* GoogleService-Info.plist */,
 				352A387D24AD490E00B38CB0 /* AppDelegate.swift */,
 				352A387F24AD490E00B38CB0 /* SceneDelegate.swift */,
-				352A388124AD490E00B38CB0 /* ViewController.swift */,
 				352A388324AD490E00B38CB0 /* Main.storyboard */,
 				352A388924AD491600B38CB0 /* Assets.xcassets */,
 				352A388B24AD491600B38CB0 /* LaunchScreen.storyboard */,
@@ -131,6 +234,45 @@
 			path = InvoiceWayUITests;
 			sourceTree = "<group>";
 		};
+		352A38BA24AD4ABA00B38CB0 /* View Contorllers */ = {
+			isa = PBXGroup;
+			children = (
+				352A38BD24AD4AC700B38CB0 /* NavigationViewController.swift */,
+				352A38BC24AD4AC700B38CB0 /* ViewController.swift */,
+			);
+			path = "View Contorllers";
+			sourceTree = "<group>";
+		};
+		352A38C724AD4AD800B38CB0 /* RetreveInfo */ = {
+			isa = PBXGroup;
+			children = (
+				352A38CA24AD4AEE00B38CB0 /* RetreveCustInfo.swift */,
+				352A38C824AD4AEE00B38CB0 /* RetreveIBOReciepts.swift */,
+				35BF537825FDD7BF00DDBCE9 /* retreveWebInfo.swift */,
+			);
+			path = RetreveInfo;
+			sourceTree = "<group>";
+		};
+		35A042F825C3810200EE1456 /* Menu Files */ = {
+			isa = PBXGroup;
+			children = (
+				35BF535525FDC63200DDBCE9 /* PresentationController.swift */,
+				35A042EE25C380B600EE1456 /* OverlayView.xib */,
+				35A042F325C380FD00EE1456 /* OverlayView.swift */,
+			);
+			path = "Menu Files";
+			sourceTree = "<group>";
+		};
+		57AAE7F6A44B697D87C69F44 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEF6998C480936049A52DA17 /* Pods_InvoiceWay.framework */,
+				E31317B6430672FB5AB155C5 /* Pods_InvoiceWay_InvoiceWayUITests.framework */,
+				DAE5A8009909C19A9FA53BE5 /* Pods_InvoiceWayTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 352A38A724AD491700B38CB0 /* Build configuration list for PBXNativeTarget "InvoiceWay" */;
 			buildPhases = (
+				66F8A676C202A652421EFD5A /* [CP] Check Pods Manifest.lock */,
 				352A387624AD490E00B38CB0 /* Sources */,
 				352A387724AD490E00B38CB0 /* Frameworks */,
 				352A387824AD490E00B38CB0 /* Resources */,
+				9029EA0A937C8F226A34882A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -155,6 +299,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 352A38AA24AD491700B38CB0 /* Build configuration list for PBXNativeTarget "InvoiceWayTests" */;
 			buildPhases = (
+				061832235803697326C02A38 /* [CP] Check Pods Manifest.lock */,
 				352A388F24AD491600B38CB0 /* Sources */,
 				352A389024AD491600B38CB0 /* Frameworks */,
 				352A389124AD491600B38CB0 /* Resources */,
@@ -173,9 +318,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 352A38AD24AD491700B38CB0 /* Build configuration list for PBXNativeTarget "InvoiceWayUITests" */;
 			buildPhases = (
+				E840A04D672DD5FF112CAD46 /* [CP] Check Pods Manifest.lock */,
 				352A389A24AD491700B38CB0 /* Sources */,
 				352A389B24AD491700B38CB0 /* Frameworks */,
 				352A389C24AD491700B38CB0 /* Resources */,
+				41DD6BFDF28B21D2A52641C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,7 +382,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3500B9D725FDBC1800C62199 /* CompleteOrderView.xib in Resources */,
 				352A388D24AD491600B38CB0 /* LaunchScreen.storyboard in Resources */,
+				35A042EF25C380B600EE1456 /* OverlayView.xib in Resources */,
+				352A38B524AD4AB000B38CB0 /* GoogleService-Info.plist in Resources */,
 				352A388A24AD491600B38CB0 /* Assets.xcassets in Resources */,
 				352A388524AD490E00B38CB0 /* Main.storyboard in Resources */,
 			);
@@ -257,14 +407,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		061832235803697326C02A38 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InvoiceWayTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41DD6BFDF28B21D2A52641C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InvoiceWay-InvoiceWayUITests/Pods-InvoiceWay-InvoiceWayUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InvoiceWay-InvoiceWayUITests/Pods-InvoiceWay-InvoiceWayUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InvoiceWay-InvoiceWayUITests/Pods-InvoiceWay-InvoiceWayUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66F8A676C202A652421EFD5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InvoiceWay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9029EA0A937C8F226A34882A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InvoiceWay/Pods-InvoiceWay-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InvoiceWay/Pods-InvoiceWay-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InvoiceWay/Pods-InvoiceWay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E840A04D672DD5FF112CAD46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InvoiceWay-InvoiceWayUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		352A387624AD490E00B38CB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				352A388224AD490E00B38CB0 /* ViewController.swift in Sources */,
+				352A38C324AD4AC800B38CB0 /* NavigationViewController.swift in Sources */,
+				35BF535625FDC63200DDBCE9 /* PresentationController.swift in Sources */,
+				352A38C524AD4AC800B38CB0 /* shippingInfoController.swift in Sources */,
+				35BF535E25FDCFE600DDBCE9 /* WebisteInfoViewController.swift in Sources */,
+				352A38C224AD4AC800B38CB0 /* ViewController.swift in Sources */,
+				352A38CE24AD4AEE00B38CB0 /* RetreveCustInfo.swift in Sources */,
+				35BF537925FDD7BF00DDBCE9 /* retreveWebInfo.swift in Sources */,
 				352A388824AD490E00B38CB0 /* InvoiceWay.xcdatamodeld in Sources */,
+				352A38C624AD4AC800B38CB0 /* login.swift in Sources */,
+				352A38CC24AD4AEE00B38CB0 /* RetreveIBOReciepts.swift in Sources */,
+				35A042F425C380FD00EE1456 /* OverlayView.swift in Sources */,
+				352A38C124AD4AC800B38CB0 /* checkoutController.swift in Sources */,
+				352A38C424AD4AC800B38CB0 /* Register.swift in Sources */,
 				352A387E24AD490E00B38CB0 /* AppDelegate.swift in Sources */,
+				351B751925FDC21D008801C3 /* COView.swift in Sources */,
 				352A388024AD490E00B38CB0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,15 +701,18 @@
 		};
 		352A38A824AD491700B38CB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE87BD22FB5F3AEFAEB27F00 /* Pods-InvoiceWay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JGM97363D6;
 				INFOPLIST_FILE = InvoiceWay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.starboat.InvoiceWay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,15 +722,18 @@
 		};
 		352A38A924AD491700B38CB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6A326CC030D2DED5A01A69F /* Pods-InvoiceWay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JGM97363D6;
 				INFOPLIST_FILE = InvoiceWay/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = org.starboat.InvoiceWay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -472,6 +743,7 @@
 		};
 		352A38AB24AD491700B38CB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5742892AC80FF898D39A44F1 /* Pods-InvoiceWayTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -494,6 +766,7 @@
 		};
 		352A38AC24AD491700B38CB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35816CA31CB33FC13CB1A936 /* Pods-InvoiceWayTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -516,6 +789,7 @@
 		};
 		352A38AE24AD491700B38CB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA24B097E7D0472DDDB5A9FB /* Pods-InvoiceWay-InvoiceWayUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +810,7 @@
 		};
 		352A38AF24AD491700B38CB0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12C3058FDD6AFA6C3C863431 /* Pods-InvoiceWay-InvoiceWayUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
